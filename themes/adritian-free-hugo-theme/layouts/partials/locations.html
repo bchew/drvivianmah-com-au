@@ -1,0 +1,26 @@
+{{ if .Site.Data.homepage.locations.enable }}
+<section id="locations" class="section section--border-bottom rad-animation-group">
+    <div class="container">
+        <div class="row rad-fade-down">
+            <div class="col-12">
+                <h2>{{ .Site.Data.homepage.locations.title }}</h2>
+                <div class="row pt-2 pt-md-4">
+                    {{ range .Site.Data.homepage.locations.items }}
+                    <div class="col-12 col-sm-6 mb-4 mb-sm-0">
+                        <div class="locations">
+                            <div class="locations__title">{{ .title }}</div>
+                            <div class="locations__address">
+                                {{ .address }}
+                            </div>
+                            <div class="locations__parking">{{ .parking | safeHTML }}</div>
+                            <br />
+                            <div style="text-decoration:none; overflow:hidden;max-width:100%;width:550px;height:300px;z-index:1"><div id="embed-ded-map-canvas" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q={{ .maps }}&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><style>#embed-ded-map-canvas .text-marker{}.map-generator{max-width: 100%; max-height: 100%; background: none;</style></div>
+                        </div>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

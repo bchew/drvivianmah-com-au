@@ -1,0 +1,14 @@
+{{ if .Site.Data.homepage.contact.enable }}
+<section id="contact" class="section section--contact pt-0">
+    <div class="container">
+        <div class="contact">
+            <h2>{{ .Site.Data.homepage.contact.title }}</h2>
+            <div class="row pt-2">
+                <div class="col-12 col-lg-7">
+                    <span>Email: {{ .Site.Data.homepage.contact.email.email | safeHTML }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
